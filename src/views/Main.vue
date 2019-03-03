@@ -23,7 +23,9 @@
         </v-card>
       </v-tab-item>
     </v-tabs>
-    <router-view></router-view>
+    <div class="content">
+      <router-view></router-view>
+    </div>
     <div class="text-xs-center mt-3">
       <v-btn @click="back">previous tab</v-btn>
       <v-btn @click="next">next tab</v-btn>
@@ -79,3 +81,9 @@
     }
   }
 </script>
+
+<style scroped>
+.content{
+  padding: 1% 5%;
+}
+</style>
