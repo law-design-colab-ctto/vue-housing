@@ -68,13 +68,13 @@
     methods: {
       next () {
         const active = parseInt(this.active)
-        active > this.tabs.length - 1? this.active = 0 : this.active = active + 1;
+        active > this.tabs.length - 1 ? this.active = 0 : this.active = active + 1;
         this.$router.push(this.tabs[active + 1].route);
       },
       back () {
         const active = parseInt(this.active)
         active == 0? this.active = this.tabs.length -1 : this.active = active - 1;
-        this.$router.push(this.tabs[active + 1].route);
+        this.$router.push(this.tabs[active - 1].route);
       }
     }
   }
