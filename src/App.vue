@@ -1,29 +1,42 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-toolbar app>
+      <v-toolbar-title class="headline">
+        <img id="ontario-logo" src="./assets/ontario-logo.png" />
+        <span class="font-weight-light">RESIDENTIAL TENANCY AGREEMENT</span>
+        <span class="" style="font-size: 12px;">(Stanrdard Form of Lease)</span>
+      </v-toolbar-title>
+    </v-toolbar>
+    <v-content>
+      <Main/>
+    </v-content>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import Main from './views/Main'
+
+export default {
+  name: 'App',
+  components: {
+    Main
+  },
+  data () {
+    return {
+      //
     }
   }
+}
+</script>
+
+<style>
+#ontario-logo{
+  max-height: 40px;
+}
+.headline{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
 }
 </style>

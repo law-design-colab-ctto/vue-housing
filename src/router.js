@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import App from './App.vue'
+import Test from './views/Test.vue';
 
 Vue.use(Router)
 
@@ -9,9 +10,29 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home
+      path: '/parties',
+      name: 'Parties',
+      component: Test
+    },
+    {
+      path: '/rent',
+      name: 'Rent',
+      component: Test
+    },
+    {
+      path: '/utilities',
+      name: 'Utilities',
+      component: Test
+    },
+    {
+      path: '/deposit',
+      name: 'Deposit',
+      component: Test
+    },
+    {
+      path: '/additional',
+      name: 'Additional',
+      component: Test
     },
     {
       path: '/about',
