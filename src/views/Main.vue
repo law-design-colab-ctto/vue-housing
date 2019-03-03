@@ -4,7 +4,7 @@
       v-model="active"
       color="cyan"
       dark
-      slider-color="yellow"
+      slider-color="orange"
     >
       <v-tab
         v-for="items in this.tabs"

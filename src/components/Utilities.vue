@@ -24,8 +24,15 @@
       <div 
         v-for="n in Number(this.other)"
         :key="n"
+        class="utility-row"
       >
-        <span>Other</span>
+        <!-- <span>Other</span> -->
+        <v-text-field
+            :rules="nameRules"
+            :counter="35"
+            label="Other service or utility"
+            required
+          ></v-text-field>
         <Radio />
       </div>
     </div>
