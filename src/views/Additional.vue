@@ -1,5 +1,5 @@
 <template>
-<p>(15) additional terms + (16) changes to this agreement</p>
+<p>(14) Assignment & Subletting + (15) additional terms + (16) changes to this agreement</p>
 </template>
 
 <script>
