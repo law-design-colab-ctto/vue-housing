@@ -18,21 +18,20 @@
     </div>
     <div class="centered" v-show="checkbox">
       <label>Number of additional services or utilities: </label> &nbsp;
-      <input class="custom-number" type="number" v-model="other" placeholder="enter number here">
+      <input class="custom-number" type="number" min="0" v-model="other" placeholder="enter number here">
     </div>
     <div v-show="other">
       <div 
         v-for="n in Number(this.other)"
         :key="n"
         class="utility-row"
+        v-show="other"
       >
-        <!-- <span>Other</span> -->
         <v-text-field
-            :rules="nameRules"
-            :counter="35"
-            label="Other service or utility"
-            required
-          ></v-text-field>
+          :counter="35"
+          label="Other service or utility"
+          required
+        ></v-text-field>
         <Radio />
       </div>
     </div>
@@ -55,7 +54,15 @@ export default {
         'Gas',
         'Air conditioning',
         'Additional storage space',
+        'On-Site Laundry',
+        'Guest Parking',
       ],
+    }
+  },
+  methods: {
+    removeAdditional: function() {
+      // console.log('turn off');
+      // this.other == 0;
     }
   }
 }

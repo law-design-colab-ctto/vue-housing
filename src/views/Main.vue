@@ -6,29 +6,32 @@
       dark
       slider-color="orange"
     >
+    <router-link 
+      v-for="items in this.tabs"
+      :key="items.id"
+      :to="items.route"
+    >
       <v-tab
-        v-for="items in this.tabs"
-        :key="items.id"
         ripple
       >
-      {{ items.name }}
-
+        {{ items.name }}
       </v-tab>
-      <v-tab-item
-        v-for="items in this.tabs"
-        :key="items.id"
-      >
-        <v-card flat>
-          <v-card-text>{{ text }}</v-card-text>
-        </v-card>
-      </v-tab-item>
+    </router-link>
+    <v-tab-item
+      v-for="items in this.tabs"
+      :key="items.id"
+    >
+      <v-card flat>
+        <!-- <v-card-text>{{ text }}</v-card-text> -->
+      </v-card>
+    </v-tab-item>
     </v-tabs>
     <div class="content">
-      <router-view></router-view>
+      <div class="text-xs-center mt-3">
+      <v-btn @click="back">previous</v-btn>
+      <v-btn @click="next">next</v-btn>
     </div>
-    <div class="text-xs-center mt-3">
-      <v-btn @click="back">previous tab</v-btn>
-      <v-btn @click="next">next tab</v-btn>
+    <router-view></router-view>
     </div>
   </div>
 </template>
@@ -85,5 +88,10 @@
 <style scroped>
 .content{
   padding: 1% 5%;
+}
+a{
+  justify-content: center;
+  display: flex;
+  text-decoration: none;
 }
 </style>
