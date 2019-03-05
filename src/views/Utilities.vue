@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import Radio from './Radio'
+import Radio from '../components/Radio'
 
 export default {
   name: 'Utilities',

@@ -27,7 +27,7 @@
     </v-tab-item>
     </v-tabs>
     <div class="content">
-      <div class="text-xs-center mt-3">
+      <div class="text-xs-center">
       <v-btn @click="back">previous</v-btn>
       <v-btn @click="next">next</v-btn>
     </div>
@@ -48,23 +48,43 @@
           },
           {
             id: 2,
+            name: "Unit",
+            route: '/unit'
+          },
+          {
+            id: 3,
+            name: "Terms",
+            route: '/terms'
+          },
+          {
+            id: 4,
             name: "Rent",
             route: '/rent'
           },
           {
-            id: 3,
+            id: 5,
+            name: "Deposits",
+            route: '/deposits'
+          },
+          {
+            id: 6,
             name: "Service & Utilities",
             route: '/utilities'
           },
           {
-            id: 4,
-            name: "Key Deposit",
-            route: '/deposit'
-          },
-          {
-            id: 5,
+            id: 7,
             name: "Additional Terms",
             route: '/additional'
+          },
+          {
+            id: 8,
+            name: "Signatures",
+            route: '/signatures'
+          },
+          {
+            id: 9,
+            name: "Appendix",
+            route: '/appendix'
           }
         ],
         text: 'Generic text loaded in each tab'
@@ -73,13 +93,13 @@
     methods: {
       next () {
         const active = parseInt(this.active)
-        active > this.tabs.length - 1 ? this.active = 0 : this.active = active + 1;
-        this.$router.push(this.tabs[active + 1].route);
+        this.active >= this.tabs.length - 1 ? this.active = 0 : this.active = active + 1;
+        this.$router.push(this.tabs[this.active].route);
       },
       back () {
         const active = parseInt(this.active)
-        active == 0? this.active = this.tabs.length -1 : this.active = active - 1;
-        this.$router.push(this.tabs[active - 1].route);
+        active == 0 ? this.active = 4 : this.active = active - 1;
+        this.$router.push(this.tabs[this.active].route);
       }
     }
   }
