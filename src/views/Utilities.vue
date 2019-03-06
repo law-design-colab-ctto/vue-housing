@@ -1,41 +1,48 @@
 <template>
-  <div class="utilities">
+  <v-form id="utilities">
     <h1>Services & Utilities</h1>
     <p>The following specifies which services are, and which services are not, included in the lawful rent for the rental unit:</p>
-    <div         
-      v-for='item in services' 
-      :key=item
-      class="utility-row"
-    >
-    <span>{{item}}</span>
-      <Radio />
-    </div>
-    <div id="additional-utilities">
-      <v-checkbox
-        v-model="checkbox"
-        :label="`Add other services or utilities: ${checkbox.toString()}`"
-      ></v-checkbox>
-    </div>
-    <div class="centered" v-show="checkbox">
-      <label>Number of additional services or utilities: </label> &nbsp;
-      <input class="custom-number" type="number" min="0" v-model="other" placeholder="enter number here">
-    </div>
-    <div v-show="other">
-      <div 
-        v-for="n in Number(this.other)"
-        :key="n"
-        class="utility-row"
-        v-show="other"
-      >
-        <v-text-field
-          :counter="35"
-          label="Other service or utility"
-          required
-        ></v-text-field>
-        <Radio />
-      </div>
-    </div>
-  </div>
+    <v-container>
+      <v-layout row wrap>
+        <v-flex xs12 sm12 md12>
+          <div         
+            v-for='item in services' 
+            :key=item
+            class="utility-row"
+          >
+            <span>{{item}}</span>
+            <Radio />
+          </div>
+          <div id="additional-utilities">
+            <v-checkbox
+              v-model="checkbox"
+              :label="`Add other services or utilities: ${checkbox.toString()}`"
+            ></v-checkbox>
+          </div>
+          <div class="centered" v-show="checkbox">
+            <label>Number of additional services or utilities: </label> &nbsp;
+            <input class="custom-number" type="number" min="0" v-model="other" placeholder="enter number here">
+          </div>
+          <div v-show="other">
+            <div 
+              v-for="n in Number(this.other)"
+              :key="n"
+              class="utility-row"
+              v-show="other"
+            >
+              <v-text-field
+                :counter="35"
+                label="Other service or utility"
+                required
+              ></v-text-field>
+              <Radio />
+            </div>
+          </div>
+
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-form>
 </template>
 
 <script>

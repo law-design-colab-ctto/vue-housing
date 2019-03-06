@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Test from './views/Test.vue';
 import Utilities from './views/Utilities.vue';
 import Rent from './views/Rent.vue';
 import Unit from './views/Unit.vue';
@@ -52,11 +51,6 @@ export default new Router({
       path: '/utilities',
       name: 'Utilities',
       component: Utilities
-    },
-    {
-      path: '/deposit',
-      name: 'Deposit',
-      component: Test
     },
     {
       path: '/changes',
