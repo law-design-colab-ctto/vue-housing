@@ -1,18 +1,22 @@
 <template>
   <v-form id="utilities">
-    <h1>Services & Utilities</h1>
+    <h2>Services & Utilities</h2>
     <p>The following specifies which services are, and which services are not, included in the lawful rent for the rental unit:</p>
-    <v-container>
-      <v-layout row wrap>
-        <v-flex xs12 sm12 md12>
-          <div         
-            v-for='item in services' 
-            :key=item
-            class="utility-row"
-          >
-            <span>{{item}}</span>
-            <Radio />
-          </div>
+      <v-container>
+        <div         
+          v-for='item in services' 
+          :key=item
+          class="utility-row"
+        >
+          <v-layout row wrap>
+            <v-flex xs12 sm6 md6>
+              <span class="utility-name">{{item}}</span>
+            </v-flex>
+            <v-flex xs12 sm6 md6>
+              <Radio />
+            </v-flex>
+          </v-layout>
+        </div>
           <div id="additional-utilities">
             <v-checkbox
               v-model="checkbox"
@@ -30,18 +34,22 @@
               class="utility-row"
               v-show="other"
             >
-              <v-text-field
-                :counter="35"
-                label="Other service or utility"
-                required
-              ></v-text-field>
-              <Radio />
+              <v-layout row wrap>
+                <v-flex xs12 sm12 md6>
+                  <v-text-field
+                    :counter="35"
+                    label="Other service or utility"
+                    required
+                  ></v-text-field>
+                </v-flex>
+                <v-flex xs12 sm12 md6>
+                  <Radio />
+                </v-flex>
+              </v-layout>
             </div>
           </div>
 
-        </v-flex>
-      </v-layout>
-    </v-container>
+      </v-container>
   </v-form>
 </template>
 
@@ -76,6 +84,21 @@ export default {
 </script>
 
 <style scoped>
+.utility-name{
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.utility-row span{
+  width: 50%;
+  min-width: 200px;
+}
+.utility-row:nth-of-type(odd){
+  background-color:#f5f5f5;
+
+}
+.v-input{
+  width: 100%;
+}
 .centered{
   display: flex;
   justify-content: center;
