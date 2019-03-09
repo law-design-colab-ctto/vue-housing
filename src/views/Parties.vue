@@ -3,9 +3,10 @@
     <h2>Parties to the Agreement</h2>
     <h3>Landloard(s):</h3>
     <div id="landlord-names">
-      <MoreNames 
+      <MoreFields 
         title="landlords"
-        v-bind:amount="landloards"
+        v-on:amountChanged="updateLandlords($event)"
+        startingAmount="1"
       />
       <Name 
         v-for="n in Number(this.landloards)"
@@ -14,9 +15,10 @@
     </div>
     <h3>Tenant(s):</h3>
     <div id="tenant-names">
-      <MoreNames
+      <MoreFields
         title="tenants"
-        v-bind:amount="tenants"
+        v-on:amountChanged="updateTenants($event)"
+        startingAmount="3"
       />
       <Name 
         v-for="n in Number(this.tenants)"
@@ -30,13 +32,13 @@
 
 <script>
 import Name from '../components/Name.vue'
-import MoreNames from '../components/MoreNames.vue'
+import MoreFields from '../components/MoreFields.vue'
 
 export default {
   name: 'Parties',
   components: {
     Name,
-    MoreNames,
+    MoreFields,
   },
   data () {
     return {
@@ -48,6 +50,12 @@ export default {
 
   ],
   methods: {
+    updateLandlords: function(updatedAmount) {
+      this.landloards = updatedAmount;
+    },
+    updateTenants: function(updatedAmount) {
+      this.tenants = updatedAmount;
+    }
   }
 }
 </script>

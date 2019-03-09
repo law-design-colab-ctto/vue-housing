@@ -5,7 +5,7 @@
         <v-flex xs12 sm12 md12>
             <div class="centered">
                 <label>Number of {{title}}: </label> &nbsp;
-                <input class="counter" type="number" min="0" v-bind:value="amount" placeholder="enter number here">
+                <input class="counter" type="number" min="0" v-model="amount" placeholder="enter number here" @keyup="amountChanged">
             </div>
         </v-flex>
       </v-layout>
@@ -17,10 +17,19 @@
 <script>
   export default {
         data () {
-            return {
-            }
+          return {
+            amount: this.startingAmount,
+          }
         },
-        props: ['title', 'amount']
+        props: [
+          'title',
+          'startingAmount'
+        ],
+        methods: {
+          amountChanged: function () {
+            this.$emit('amountChanged', this.amount)
+          }
+        }
   }
 </script>
 
@@ -35,5 +44,10 @@
 .container{
     width: 100% !important;
     max-width: 100% !important;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 </style>       

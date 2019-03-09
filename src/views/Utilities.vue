@@ -21,11 +21,17 @@
             <v-checkbox
               v-model="checkbox"
               :label="`Add other services or utilities: ${checkbox.toString()}`"
+              @change="checkRest"
             ></v-checkbox>
           </div>
           <div class="centered" v-show="checkbox">
-            <label>Number of additional services or utilities: </label> &nbsp;
-            <input class="custom-number" type="number" min="0" v-model="other" placeholder="enter number here">
+            <MoreFields
+              title="additional services & utilities"
+              v-show="checkbox"
+              class="centered"
+              v-on:amountChanged="updateAmount($event)"
+              v-bind:startingAmount="other"
+            />
           </div>
           <div v-show="other">
             <div 
@@ -55,11 +61,13 @@
 
 <script>
 import Radio from '../components/Radio'
+import MoreFields from '../components/MoreFields'
 
 export default {
   name: 'Utilities',
   components: {
-      Radio
+      Radio,
+      MoreFields,
   },
   data () {
     return {
@@ -75,9 +83,13 @@ export default {
     }
   },
   methods: {
-    removeAdditional: function() {
-      // console.log('turn off');
-      // this.other == 0;
+    updateAmount: function(updatedAmount) {
+      this.other = updatedAmount;
+    },
+    checkRest: function() {
+      if (!this.checkbox) {
+        this.other = 0;
+      }
     }
   }
 }

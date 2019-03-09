@@ -4,7 +4,6 @@
       <v-layout row wrap>
         <v-flex xs12 sm12 md6>
           <v-text-field
-            autofocus
             label="Last Name"
           ></v-text-field>
         </v-flex>
