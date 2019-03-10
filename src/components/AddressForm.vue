@@ -11,14 +11,14 @@
             <v-text-field
                :rules="nameRules"
                :counter="40"
-               label="Unit"
+               label='Unit (e.g., "Unit 1" or "basement unit")'
                required
             ></v-text-field>
         </v-flex>
         <v-flex xs12 sm12 md4>
             <v-text-field
                :rules="streetNumberRules"
-               :counter="6"
+               :counter="8"
                label="Street Number"
                type="number"
                min="0"
@@ -36,15 +36,14 @@
         <v-flex xs12 sm12 md4>
             <v-text-field
                 :rules="cityRules"
-                :counter="40"
+                :counter="20"
                 label="City/Town"
                 required
             ></v-text-field>
         </v-flex>
         <v-flex xs12 sm12 md4>
             <v-text-field
-                :rules="nameRules"
-                :counter="40"
+                :rules="provinceRules"
                 label="Province"
                 required
             ></v-text-field>
@@ -85,13 +84,18 @@
       valid: true,
       name: '',
       nameRules: [
-        v => !!v || 'Name is required',
+        v => !!v || 'Unit number or description is required',
         v => (v && v.length <= 10) || 'Name must be less than 10 characters'
       ],
       city: '',
       cityRules: [
         v => !!v || 'City/Town is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        v => (v && v.length <= 10) || 'Name must be less than 20 characters'
+      ],
+      Province: '',
+      provinceRules: [
+        v => !!v || 'Province is required',
+        v => (v && v.length <= 10) || 'Please select a province'
       ],
       email: '',
       emailRules: [
@@ -101,12 +105,12 @@
       streetName: '',
       streetNameRules: [
         v => !!v || 'Street name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        v => (v && v.length <= 40) || 'Name must be less than 10 characters'
       ],
       streetNumber: '',
       streetNumberRules: [
         v => !!v || 'Street number is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        v => (v && v.length <= 8) || 'Name must be less than 10 characters'
       ],
       select: null,
       items: [

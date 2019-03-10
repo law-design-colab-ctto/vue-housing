@@ -16,20 +16,20 @@
 
 <script>
   export default {
-        data () {
-          return {
-            amount: this.startingAmount,
-          }
-        },
-        props: [
-          'title',
-          'startingAmount'
-        ],
-        methods: {
-          amountChanged: function () {
-            this.$emit('amountChanged', this.amount)
-          }
-        }
+    data () {
+      return {
+        amount: this.startingAmount,
+      }
+    },
+    props: [
+      'title',
+      'startingAmount'
+    ],
+    methods: {
+      amountChanged: function () {
+        this.$emit('amountChanged', this.amount)
+      }
+    },
   }
 </script>
 

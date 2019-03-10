@@ -5,7 +5,8 @@
         <AddressForm />
         <MoreFields         
           title="vehicle parking spaces"
-          v-bind:amount="parkingSpaces"
+          v-model="parkingSpaces"
+          v-on:amountChanged="updateAmount($event)"
         />
     <v-container>
       <v-layout 
@@ -20,7 +21,7 @@
         </v-flex>
         <v-flex xs12 sm10 md10>
           <v-text-field
-            label="Description of parking spot"
+            label="Description of parking spot (e.g., indoor/outdoor, location, etc.)"
           ></v-text-field>
         </v-flex>
       </v-layout>
@@ -45,6 +46,9 @@ export default {
     }
   },
   methods: {
+    updateAmount: function(updatedAmount) {
+      this.parkingSpaces = updatedAmount;
+    }
   }
 }
 </script>

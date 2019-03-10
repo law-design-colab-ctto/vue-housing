@@ -9,10 +9,10 @@
           class="utility-row"
         >
           <v-layout row wrap>
-            <v-flex xs12 sm6 md6>
+            <v-flex xs12 sm12 md6>
               <span class="utility-name">{{item}}</span>
             </v-flex>
-            <v-flex xs12 sm6 md6>
+            <v-flex xs12 sm12 md6>
               <Radio />
             </v-flex>
           </v-layout>
@@ -146,5 +146,9 @@ export default {
 }
 .v-input--radio-group__input{
   flex-direction: row;
+}
+#utilities .flex {
+  display: flex !important;
+  align-items: center !important;
 }
 </style>
