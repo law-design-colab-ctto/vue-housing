@@ -41,20 +41,20 @@
 </script>
 
 <style>
-.v-input__control{
+.v-input__control {
     width: 100%;
 }
-.container{
+.container {
   width: 40%;
   max-width: 40%;
   margin: unset;
   padding: 0;
 }
-.v-input--radio-group__input{
+.v-input--radio-group__input {
   display: flex;
   flex-direction: row !important;
 }
-.v-input{
-  justify-content: flex-end !important;
+.v-input--radio-group__input span {
+  align-self: end;
 }
 </style>

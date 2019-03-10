@@ -1,13 +1,14 @@
 <template>
   <v-container>
-    <v-radio-group v-model="radioGroup">
+    <v-radio-group v-model="value">
       <span>{{label}}</span>
       <v-radio
         class="radio"
         v-for="item in answers"
         :key="item.id"
         :label="item.name"
-        :value="item.name"
+        :value="item.value"
+        @change="valueChanged"
       >
       </v-radio>
     </v-radio-group>
@@ -18,23 +19,31 @@
 <script>
   export default {
     data () {
-        return {
-            radioGroup: 1,
-                answers: [
-                {
-                  id: 0,
-                  name: "Yes"
-                },
-                {
-                  id: 1,
-                  name: "No"
-                },
-            ],
-        }
+      return {
+        value: false,
+        answers: [
+          {
+            id: 1,
+            name: "Yes",
+            value: true
+          },
+          {
+            id: 0,
+            name: "No",
+            value: false
+          },
+        ],
+      }
     },
     props: [
-      'label'
+      'label',
     ],
+    methods: {
+      valueChanged: function() {
+        this.value ? this.value = false : this.value = true;
+        this.$emit('valueChanged', this.value)
+      }
+    }
   }
 </script>
 
@@ -53,8 +62,5 @@
   flex-direction: row !important;
   justify-content: center;
   align-items: baseline;
-}
-.v-input{
-  justify-content: flex-end !important;
 }
 </style>

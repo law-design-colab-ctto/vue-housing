@@ -3,7 +3,7 @@
     <v-toolbar app>
       <v-toolbar-title class="headline">
         <img id="ontario-logo" src="./assets/ontario-logo.png" />
-        <span class="font-weight-light">RESIDENTIAL TENANCY AGREEMENT</span>
+        <h1 class="">RESIDENTIAL TENANCY AGREEMENT</h1>
         <span class="" style="font-size: 12px;">(Stanrdard Form of Lease)</span>
       </v-toolbar-title>
     </v-toolbar>
@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
 #ontario-logo{
   max-height: 40px;
 }

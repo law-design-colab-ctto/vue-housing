@@ -6,7 +6,7 @@
         <MoreFields         
           title="vehicle parking spaces"
           v-model="parkingSpaces"
-          v-on:amountChanged="updateAmount($event)"
+          v-on:amountChanged="updateParking($event)"
         />
     <v-container>
       <v-layout 
@@ -26,8 +26,14 @@
         </v-flex>
       </v-layout>
       <v-layout>
-        <v-flex xs12 sm12 md12>
-          <RadioYesNo label="Is this unit a condo or apparetment?"/>
+        <v-flex xs12 sm4 md4>
+          <RadioYesNo 
+            label="Is the rental unit in a condominium?"
+            v-on:valueChanged="checkIfCondo($event)"
+          />
+        </v-flex>
+        <v-flex xs12 sm8 md8 v-if="isCondo">
+          <p>The tenant agrees to compy with the condominium declaration, by-laws, and rules, as provided by the landlord</p>
         </v-flex>
       </v-layout>
     </v-container>
@@ -50,16 +56,23 @@ export default {
   data () {
     return {
       parkingSpaces: 0,
+      isCondo: false,
     }
   },
   methods: {
-    updateAmount: function(updatedAmount) {
+    updateParking: function(updatedAmount) {
       this.parkingSpaces = updatedAmount;
+    },
+    checkIfCondo: function(valueChanged) {
+      this.isCondo = valueChanged;
+      console.log(this.isCondo);
     }
   }
 }
 </script>
 
 <style scoped>
-
+.layout .flex .container .v-input {
+  float: left !important;
+}
 </style>
