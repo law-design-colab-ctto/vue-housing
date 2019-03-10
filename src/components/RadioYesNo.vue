@@ -1,7 +1,9 @@
 <template>
   <v-container>
     <v-radio-group v-model="radioGroup">
+      <span>{{label}}</span>
       <v-radio
+        class="radio"
         v-for="item in answers"
         :key="item.id"
         :label="item.name"
@@ -29,13 +31,16 @@
                 },
             ],
         }
-    }
+    },
+    props: [
+      'label'
+    ],
   }
 </script>
 
 <style>
 .v-input__control{
-    width: 100%;
+  width: 100%;
 }
 .container{
   width: 40%;
@@ -46,6 +51,8 @@
 .v-input--radio-group__input{
   display: flex;
   flex-direction: row !important;
+  justify-content: center;
+  align-items: baseline;
 }
 .v-input{
   justify-content: flex-end !important;

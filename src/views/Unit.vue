@@ -25,6 +25,11 @@
           ></v-text-field>
         </v-flex>
       </v-layout>
+      <v-layout>
+        <v-flex xs12 sm12 md12>
+          <RadioYesNo label="Is this unit a condo or apparetment?"/>
+        </v-flex>
+      </v-layout>
     </v-container>
   </v-form>
 </template>
@@ -32,13 +37,15 @@
 <script>
 import AddressForm from '../components/AddressForm'
 import MoreFields from '../components/MoreFields'
+import RadioYesNo from '../components/RadioYesNo'
 
 export default {
 
   name: 'Rent',
   components: {
     AddressForm,
-    MoreFields
+    MoreFields,
+    RadioYesNo,
   },
   data () {
     return {
