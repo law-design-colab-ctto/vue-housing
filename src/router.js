@@ -17,6 +17,12 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    // Todo: Create PageNotFound component or redirect to homepage.
+    // {
+    //   path: '*',
+    //   name: 'PageNotFound',
+    //   component: PageNotFound
+    // },
     {
       path: '/',
       name: 'Parties',
