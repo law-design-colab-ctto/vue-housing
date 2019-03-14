@@ -6,21 +6,20 @@
       dark
       slider-color="orange"
     >
-    <router-link 
-      v-for="items in this.tabs"
-      :key="items.id"
-      :to="items.route"
-    >
       <v-tab
         ripple
+        v-for="items in this.tabs"
+        :key="items.id"
+        :to="items.route"
       >
         {{ items.name }}
       </v-tab>
-    </router-link>
     <v-tab-item
       v-for="items in this.tabs"
       :key="items.id"
+      :value="items.route"
     >
+        <router-view></router-view>
       <v-card flat>
         <!-- <v-card-text>{{ text }}</v-card-text> -->
       </v-card>
@@ -31,7 +30,6 @@
       <v-btn @click="back">previous</v-btn>
       <v-btn @click="next">next</v-btn>
     </div>
-    <router-view></router-view>
     </div>
   </div>
 </template>
@@ -43,46 +41,51 @@
         active: null,
         tabs: [{
             id: 1,
+            name: "Home",
+            route: '/'
+          },
+          {
+            id: 2,
             name: "Parties",
             route: '/parties'
           },
           {
-            id: 2,
+            id: 3,
             name: "Unit",
             route: '/unit'
           },
           {
-            id: 3,
+            id: 4,
             name: "Terms",
             route: '/terms'
           },
           {
-            id: 4,
+            id: 5,
             name: "Rent",
             route: '/rent'
           },
           {
-            id: 5,
+            id: 6,
             name: "Deposits",
             route: '/deposits'
           },
           {
-            id: 6,
+            id: 7,
             name: "Service & Utilities",
             route: '/utilities'
           },
           {
-            id: 7,
+            id: 8,
             name: "Additional Terms",
             route: '/additional'
           },
           {
-            id: 8,
+            id: 9,
             name: "Signatures",
             route: '/signatures'
           },
           {
-            id: 9,
+            id: 10,
             name: "Appendix",
             route: '/appendix'
           }
@@ -92,14 +95,24 @@
     },
     methods: {
       next () {
-        const active = parseInt(this.active)
-        this.active >= this.tabs.length - 1 ? this.active = 0 : this.active = active + 1;
-        this.$router.push(this.tabs[this.active].route);
+        let nextTab = null;
+        for (let item of this.tabs) {
+          if (this.active == item.route) {
+            nextTab = item.id - 1;
+          }
+        }
+        nextTab >= this.tabs.length - 1 ? nextTab = 0 : nextTab = nextTab + 1;
+        this.$router.push(this.tabs[nextTab].route);
       },
       back () {
-        const active = parseInt(this.active)
-        active == 0 ? this.active = this.tabs.length - 1 : this.active = active - 1;
-        this.$router.push(this.tabs[this.active].route);
+        let nextTab = null;
+        for (let item of this.tabs) {
+          if (this.active == item.route) {
+            nextTab = item.id - 1;
+          }
+        }
+        nextTab >= this.tabs.length - 1 ? nextTab = 0 : nextTab = nextTab - 1;
+        this.$router.push(this.tabs[nextTab].route);
       }
     }
   }
