@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Home from './views/Home.vue';
 import Utilities from './views/Utilities.vue';
 import Rent from './views/Rent.vue';
 import Unit from './views/Unit.vue';
@@ -19,8 +20,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Parties',
-      component: Parties
+      name: 'Home',
+      component: Home
     },
     {
       path: '/parties',
