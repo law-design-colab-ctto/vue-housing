@@ -27,8 +27,8 @@
     </v-tabs>
     <div class="content">
       <div class="text-xs-center">
-      <v-btn @click="back">previous</v-btn>
-      <v-btn @click="next">next</v-btn>
+      <v-btn @click="back" :disabled="active == '/'">previous</v-btn>
+      <v-btn @click="next" :disabled="active == '/appendix'">next</v-btn>
     </div>
     </div>
   </div>
@@ -111,7 +111,7 @@
             nextTab = item.id - 1;
           }
         }
-        nextTab >= this.tabs.length - 1 ? nextTab = 0 : nextTab = nextTab - 1;
+        nextTab == 0 ? nextTab = this.tabs.length - 1 : nextTab = nextTab - 1;
         this.$router.push(this.tabs[nextTab].route);
       }
     }
