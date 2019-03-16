@@ -11,7 +11,7 @@
             <v-text-field
                :rules="nameRules"
                :counter="40"
-               label="Unit"
+               v-bind:label="$t('Unit')"
                required
             ></v-text-field>
         </v-flex>
@@ -19,7 +19,7 @@
             <v-text-field
                :rules="streetNumberRules"
                :counter="6"
-               label="Street Number"
+               v-bind:label="$t('Street Number')"
                type="number"
                min="0"
                required
@@ -29,7 +29,7 @@
             <v-text-field
                :rules="streetNameRules"
                :counter="40"
-               label="Street Name"
+               v-bind:label="$t('Street Name')"
                required
             ></v-text-field>
         </v-flex>
@@ -37,7 +37,7 @@
             <v-text-field
                 :rules="cityRules"
                 :counter="40"
-                label="City/Town"
+                v-bind:label="$t('City')"
                 required
             ></v-text-field>
         </v-flex>
@@ -45,7 +45,7 @@
             <v-text-field
                 :rules="nameRules"
                 :counter="40"
-                label="Province"
+                v-bind:label="$t('Province')"
                 required
             ></v-text-field>
         </v-flex>
@@ -55,21 +55,21 @@
                 color="success"
                 @click="validate"
                 >
-                Validate
+                {{ $t("Validate") }}
             </v-btn>
 
             <v-btn
                 color="error"
                 @click="reset"
                 >
-                Reset Form
+                {{ $t("Reset Form") }}
             </v-btn>
 
             <v-btn
                 color="warning"
                 @click="resetValidation"
                 >
-                Reset Validation
+                {{ $t("Recheck") }}
             </v-btn>
         </v-flex>
       </v-layout>
