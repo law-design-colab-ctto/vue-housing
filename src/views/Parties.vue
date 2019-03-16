@@ -1,7 +1,7 @@
 <template>
   <div id="parties">
     <h2>Parties to the Agreement</h2>
-    <h3>Landloard(s):</h3>
+    <h3>landlord(s):</h3>
     <div id="landlord-names">
       <MoreFields 
         title="landlords"
@@ -9,7 +9,7 @@
         startingAmount="1"
       />
       <Name 
-        v-for="n in Number(this.landloards)"
+        v-for="n in Number(this.landlords)"
         :key="n"
       />
     </div>
@@ -42,7 +42,7 @@ export default {
   },
   data () {
     return {
-      landloards: 1,
+      landlords: 1,
       tenants: 3,
     }
   },
@@ -51,7 +51,7 @@ export default {
   ],
   methods: {
     updateLandlords: function(updatedAmount) {
-      this.landloards = updatedAmount;
+      this.landlords = updatedAmount;
     },
     updateTenants: function(updatedAmount) {
       this.tenants = updatedAmount;

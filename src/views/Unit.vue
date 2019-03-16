@@ -1,7 +1,7 @@
 <template>
   <v-form id="unit">
     <h2>Unit</h2>
-    <p>The landloard will rent to the tenant the unit at the following address:</p>
+    <p>The landlord will rent to the tenant the unit at the following address:</p>
         <AddressForm />
         <MoreFields         
           title="vehicle parking spaces"

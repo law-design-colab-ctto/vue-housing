@@ -24,7 +24,7 @@
   export default {
       data () {
           return {
-              landloards: 1,
+              landlords: 1,
           }
       },
   }
