@@ -3,8 +3,8 @@
     <v-toolbar app>
       <v-toolbar-title class="headline">
         <img id="ontario-logo" src="./assets/ontario-logo.png" />
-        <span class="font-weight-light">RESIDENTIAL TENANCY AGREEMENT</span>
-        <span class="" style="font-size: 12px;">(Stanrdard Form of Lease)</span>
+        <span class="font-weight-light">{{ $t("RESIDENTIAL TENANCY AGREEMENT") }}</span>
+        <span class="" style="font-size: 12px;">{{ $t("Standard Form of Lease") }}</span>
       </v-toolbar-title>
     </v-toolbar>
     <v-content>
