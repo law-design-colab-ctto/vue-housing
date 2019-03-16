@@ -1,5 +1,15 @@
 {
     "hello": "Bonjour",
     "previous": "précédent",
-    "next": "suivant"
+    "next": "suivant",
+    "Home": "Accueil",
+    "Parties": "Parties",
+    "Unit": "Logement",
+    "Terms": "Durée",
+    "Rent": "Loyer",
+    "Deposits": "Avance",
+    "Service & Utilities": "Services d’utilité publique",
+    "Additional Terms": "Conditions additionnelles",
+    "Signatures": "Signatures",
+    "Appendix": "Annexe"
 }

@@ -1,5 +1,15 @@
 {
     "hello": "Hello",
     "previous": "previous",
-    "next": "next"
+    "next": "next",
+    "Home": "Home",
+    "Parties": "Parties",
+    "Unit": "Unit",
+    "Terms": "Terms",
+    "Rent": "Rent",
+    "Deposits": "Deposits",
+    "Service & Utilities": "Service & Utilities",
+    "Additional Terms": "Additional Terms",
+    "Signatures": "Signatures",
+    "Appendix": "Appendix"
 }

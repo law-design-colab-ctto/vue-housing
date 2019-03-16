@@ -12,7 +12,7 @@
         :key="items.id"
         :to="items.route"
       >
-        {{ items.name }}
+        <span>{{ items.name | myLocale }}</span>
       </v-tab>
     <v-tab-item
       v-for="items in this.tabs"

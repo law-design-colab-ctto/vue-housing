@@ -7,6 +7,10 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+Vue.filter('myLocale', function (value) {
+  return i18n.t(value)
+})
+
 new Vue({
   router,
   store,
