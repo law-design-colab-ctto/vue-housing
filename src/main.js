@@ -6,9 +6,17 @@ import router from './router'
 import store from './store'
 require('../static/styles.scss');
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+import { faExclamation } from '@fortawesome/free-solid-svg-icons'
+library.add(faExclamation)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.config.productionTip = false
 
-Vue.filter('myLocale', function (value) {
+Vue.filter('myLocale', function (value) {3
   return i18n.t(value)
 })
 
