@@ -12,7 +12,7 @@
         :key="items.id"
         :to="items.route"
       >
-        {{ items.name }}
+        <span>{{ items.name | myLocale }}</span>
       </v-tab>
     <v-tab-item
       v-for="items in this.tabs"
@@ -27,15 +27,21 @@
     </v-tabs>
     <div class="content">
       <div class="text-xs-center">
-      <v-btn @click="back" :disabled="active == '/'">previous</v-btn>
-      <v-btn @click="next" :disabled="active == '/appendix'">next</v-btn>
+      <v-btn @click="back" :disabled="active == '/'">{{ $t("previous") }}</v-btn>
+      <v-btn @click="next" :disabled="active == '/appendix'">{{ $t("next") }}</v-btn>
+          <langSwitcher/>
     </div>
     </div>
   </div>
 </template>
 
 <script>
+import langSwitcher from  '@/components/langSwitcher.vue';
+
   export default {
+    components: {
+      langSwitcher
+    },
     data () {
       return {
         active: null,

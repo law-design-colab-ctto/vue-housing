@@ -4,7 +4,7 @@
       <v-layout row wrap>
         <v-flex xs12 sm12 md12>
             <div class="centered">
-                <label>Number of {{title}}: </label> &nbsp;
+                <label>{{ $t("Number of") }} {{title | myLocale}}: </label> &nbsp;
                 <input class="counter" type="number" min="0" v-model="amount" placeholder="enter number here" @keyup="amountChanged">
             </div>
         </v-flex>

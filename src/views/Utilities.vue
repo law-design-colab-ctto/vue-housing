@@ -1,7 +1,7 @@
 <template>
   <v-form id="utilities">
-    <h2>Services & Utilities</h2>
-    <p>The following specifies which services are, and which services are not, included in the lawful rent for the rental unit:</p>
+    <h2>{{ $t("Service & Utilities") }}</h2>
+    <p>{{ $t("The following specifies which services are, and which services are not, included in the lawful rent for the rental unit") }}:</p>
       <v-container>
         <div         
           v-for='item in services' 
@@ -10,7 +10,7 @@
         >
           <v-layout row wrap>
             <v-flex xs12 sm6 md6>
-              <span class="utility-name">{{item}}</span>
+              <span class="utility-name">{{item | myLocale}}</span>
             </v-flex>
             <v-flex xs12 sm6 md6>
               <Radio />
@@ -20,7 +20,7 @@
           <div id="additional-utilities">
             <v-checkbox
               v-model="checkbox"
-              :label="`Add other services or utilities: ${checkbox.toString()}`"
+              v-bind:label="$t('Add other services or utilities')"
               @change="checkRest"
             ></v-checkbox>
           </div>
@@ -44,7 +44,7 @@
                 <v-flex xs12 sm12 md6>
                   <v-text-field
                     :counter="35"
-                    label="Other service or utility"
+                    v-bind:label="$t('Other service or utility')"
                     required
                   ></v-text-field>
                 </v-flex>
