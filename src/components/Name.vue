@@ -4,13 +4,13 @@
       <v-layout row wrap>
         <v-flex xs12 sm12 md6>
           <v-text-field
-            label="Last Name"
+            v-bind:label="$t('lastname')"
           ></v-text-field>
         </v-flex>
 
         <v-flex xs12 sm12 md6>
           <v-text-field
-            label="First Name"
+            v-bind:label="$t('firstname')"
           ></v-text-field>
         </v-flex>
 
@@ -24,7 +24,7 @@
   export default {
       data () {
           return {
-              landloards: 1,
+              landlords: 1,
           }
       },
   }

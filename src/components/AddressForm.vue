@@ -11,15 +11,15 @@
             <v-text-field
                :rules="nameRules"
                :counter="40"
-               label='Unit (e.g., "Unit 1" or "basement unit")'
+               v-bind:label="$t('Unit')"
                required
             ></v-text-field>
         </v-flex>
         <v-flex xs12 sm12 md4>
             <v-text-field
                :rules="streetNumberRules"
-               :counter="8"
-               label="Street Number"
+               :counter="6"
+               v-bind:label="$t('Street Number')"
                type="number"
                min="0"
                required
@@ -29,22 +29,23 @@
             <v-text-field
                :rules="streetNameRules"
                :counter="40"
-               label="Street Name"
+               v-bind:label="$t('Street Name')"
                required
             ></v-text-field>
         </v-flex>
         <v-flex xs12 sm12 md4>
             <v-text-field
                 :rules="cityRules"
-                :counter="20"
-                label="City/Town"
+                :counter="40"
+                v-bind:label="$t('City')"
                 required
             ></v-text-field>
         </v-flex>
         <v-flex xs12 sm12 md4>
             <v-text-field
-                :rules="provinceRules"
-                label="Province"
+                :rules="nameRules"
+                :counter="40"
+                v-bind:label="$t('Province')"
                 required
             ></v-text-field>
         </v-flex>
@@ -54,21 +55,21 @@
                 color="success"
                 @click="validate"
                 >
-                Validate
+                {{ $t("Validate") }}
             </v-btn>
 
             <v-btn
                 color="error"
                 @click="reset"
                 >
-                Reset Form
+                {{ $t("Reset Form") }}
             </v-btn>
 
             <v-btn
                 color="warning"
                 @click="resetValidation"
                 >
-                Reset Validation
+                {{ $t("Recheck") }}
             </v-btn>
         </v-flex>
       </v-layout>

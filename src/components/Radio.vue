@@ -4,7 +4,7 @@
       <v-radio
         v-for="item in answers"
         :key="item.id"
-        :label="item.name"
+        v-bind:label="$t(item.name)"
         :value="item.name"
       >
       </v-radio>

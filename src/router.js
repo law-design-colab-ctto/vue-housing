@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Home from './views/Home.vue';
 import Utilities from './views/Utilities.vue';
 import Rent from './views/Rent.vue';
 import Unit from './views/Unit.vue';
@@ -17,10 +18,16 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    // Todo: Create PageNotFound component or redirect to homepage.
+    // {
+    //   path: '*',
+    //   name: 'PageNotFound',
+    //   component: PageNotFound
+    // },
     {
       path: '/',
-      name: 'Parties',
-      component: Parties
+      name: 'Home',
+      component: Home
     },
     {
       path: '/parties',

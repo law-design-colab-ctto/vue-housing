@@ -1,7 +1,7 @@
 <template>
   <v-form id="unit">
-    <h2>Unit</h2>
-    <p>The landloard will rent to the tenant the unit at the following address:</p>
+    <h2>{{ $t("Unit") }}</h2>
+    <p>{{ $t("The landlord will rent to the tenant the unit at the following address")}}:</p>
         <AddressForm />
         <MoreFields         
           title="vehicle parking spaces"
@@ -17,11 +17,11 @@
         <v-flex 
           xs12 sm2 md2
         >
-          <p>({{n}}) Parking spot:</p>
+          <p>({{n}}) {{ $t("parking spot") }}:</p>
         </v-flex>
         <v-flex xs12 sm10 md10>
           <v-text-field
-            label="Description of parking spot (e.g., indoor/outdoor, location, etc.)"
+            v-bind:label="$t('parkdescription')"
           ></v-text-field>
         </v-flex>
       </v-layout>
