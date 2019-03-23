@@ -1,6 +1,6 @@
 <template>
   <v-form id="unit">
-    <h2>{{ $t("Unit") }}</h2>
+    <h1>{{ $t("Unit") }}</h1>
     <p>{{ $t("The landlord will rent to the tenant the unit at the following address")}}:</p>
         <AddressForm />
         <MoreFields         

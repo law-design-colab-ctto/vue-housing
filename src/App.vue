@@ -8,7 +8,7 @@
       </v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <Main/>
+      <Main id="main"/>
     </v-content>
   </v-app>
 </template>
@@ -32,6 +32,9 @@ export default {
 <style lang='scss'>
 #ontario-logo{
   max-height: 40px;
+}
+#main {
+  height: 100%;
 }
 .headline{
   display: flex;

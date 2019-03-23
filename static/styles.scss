@@ -1,18 +1,14 @@
 html {
-
     font-size: 10px;
 }
 h1{ 
-    font-size: 2.5rem;
-    font-weight: 300;
+    font-size: 2.6rem;
+    font-weight: 600;
 }
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
 }
-p {
-    font-size: 1.6rem;
-}
-span {
+p, span, li {
     font-size: 1.6rem;
 }
 label{
@@ -25,3 +21,8 @@ input{
 #utilities .v-input{
     justify-content: flex-end !important;
 }
+
+#termEnd .v-input--radio-group__input{
+    flex-direction: column !important;
+    flex-wrap: wrap;
+  }

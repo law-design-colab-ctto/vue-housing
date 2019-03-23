@@ -14,23 +14,22 @@
       >
         <span>{{ items.name | myLocale }}</span>
       </v-tab>
-    <v-tab-item
-      v-for="items in this.tabs"
-      :key="items.id"
-      :value="items.route"
-    >
-        <router-view></router-view>
-      <v-card flat>
-        <!-- <v-card-text>{{ text }}</v-card-text> -->
-      </v-card>
-    </v-tab-item>
+      <v-tab-item
+        v-for="items in this.tabs"
+        :key="items.id"
+        :value="items.route"
+      >
+        <div class="content">
+          <div class="text-xs-center">
+            <v-btn @click="back" :disabled="active == '/'">{{ $t("previous") }}</v-btn>
+            <v-btn @click="next" :disabled="active == '/appendix'">{{ $t("next") }}</v-btn>
+              <langSwitcher/>
+          </div>
+        </div>
+      </v-tab-item>
     </v-tabs>
-    <div class="content">
-      <div class="text-xs-center">
-      <v-btn @click="back" :disabled="active == '/'">{{ $t("previous") }}</v-btn>
-      <v-btn @click="next" :disabled="active == '/appendix'">{{ $t("next") }}</v-btn>
-          <langSwitcher/>
-    </div>
+    <div id="mainView">
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -62,8 +61,8 @@ import langSwitcher from  '@/components/langSwitcher.vue';
           },
           {
             id: 4,
-            name: "Terms",
-            route: '/terms'
+            name: "Term",
+            route: '/term'
           },
           {
             id: 5,
@@ -132,5 +131,8 @@ a{
   justify-content: center;
   display: flex;
   text-decoration: none;
+}
+#mainView {
+  padding: 0 3%;
 }
 </style>

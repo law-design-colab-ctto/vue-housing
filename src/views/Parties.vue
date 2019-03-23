@@ -1,6 +1,6 @@
 <template>
   <div id="parties">
-    <h2>{{ $t("Parties to the Agreement") }}</h2>
+    <h1>{{ $t("Parties to the Agreement") }}</h1>
     <h3>{{ $t("Landlords") }}:</h3>
     <div id="landlord-names">
       <MoreFields 

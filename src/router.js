@@ -4,7 +4,7 @@ import Home from './views/Home.vue';
 import Utilities from './views/Utilities.vue';
 import Rent from './views/Rent.vue';
 import Unit from './views/Unit.vue';
-import Terms from './views/Terms.vue';
+import Term from './views/Term.vue';
 import Parties from './views/Parties.vue';
 import Deposits from './views/Deposits.vue';
 import Changes from './views/Changes.vue';
@@ -40,9 +40,9 @@ export default new Router({
       component: Unit
     },
     {
-      path: '/terms',
-      name: 'Terms',
-      component: Terms
+      path: '/term',
+      name: 'Term',
+      component: Term
     },
     {
       path: '/rent',
