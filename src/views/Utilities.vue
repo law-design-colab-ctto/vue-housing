@@ -98,7 +98,6 @@ export default {
 <style scoped>
 .utility-name{
   font-weight: 600;
-  font-size: 1.2rem;
 }
 .utility-row span{
   width: 50%;
