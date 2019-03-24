@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-content>
     <v-tabs
       v-model="active"
       color="cyan"
@@ -31,7 +31,7 @@
     <div id="mainView">
       <router-view></router-view>
     </div>
-  </div>
+  </v-content>
 </template>
 
 <script>

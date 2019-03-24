@@ -1,25 +1,24 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline">
-        <img id="ontario-logo" src="./assets/ontario-logo.png" />
-        <span class="font-weight-light">{{ $t("RESIDENTIAL TENANCY AGREEMENT") }}</span>
-        <span class="" style="font-size: 12px;">{{ $t("Standard Form of Lease") }}</span>
-      </v-toolbar-title>
-    </v-toolbar>
-    <v-content>
+    <div id="app">
+      <Header id="header"/>
       <Main id="main"/>
-    </v-content>
+      <Footer id="footer"/>
+    </div>
   </v-app>
 </template>
 
 <script>
-import Main from './views/Main'
+import Main from '@/views/Main'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 
 export default {
   name: 'App',
   components: {
-    Main
+    Header,
+    Main,
+    Footer
   },
   data () {
     return {
@@ -30,6 +29,25 @@ export default {
 </script>
 
 <style lang='scss'>
+#app {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: minmax(70px, 5%) 1fr minmax(70px, 5%);
+  grid-template-areas: 
+    'header'
+    'main'
+    'footer'
+  ;
+}
+#header {
+  grid-area: header;
+}
+#main {
+  grid-area: main;
+}
+#footer {
+  grid-area: footer;
+}
 #ontario-logo{
   max-height: 40px;
 }

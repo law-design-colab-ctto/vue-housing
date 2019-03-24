@@ -19,10 +19,21 @@ input{
 }
 
 #utilities .v-input{
-    justify-content: flex-end !important;
+  justify-content: flex-end !important;
 }
 
 #termEnd .v-input--radio-group__input{
-    flex-direction: column !important;
-    flex-wrap: wrap;
-  }
+  flex-direction: column !important;
+  flex-wrap: wrap;
+}
+
+#header .v-text-field__details {
+  display: none !important;
+}
+#header .v-input__slot {
+  margin: 0;
+}
+
+html, body, #app{
+  height: 100%;
+}
