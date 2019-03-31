@@ -29,17 +29,25 @@
       </v-tab-item>
     </v-tabs>
     <div id="mainView">
+      <div id="navigation">
+        <Navigation />
+      </div>
       <router-view></router-view>
+      <div id="info">
+        <p>INFO</p>
+      </div>
     </div>
   </v-content>
 </template>
 
 <script>
 import langSwitcher from  '@/components/langSwitcher.vue';
+import Navigation from  '@/components/Navigation.vue';
 
   export default {
     components: {
-      langSwitcher
+      langSwitcher,
+      Navigation
     },
     data () {
       return {
@@ -124,6 +132,11 @@ import langSwitcher from  '@/components/langSwitcher.vue';
 </script>
 
 <style scroped>
+#mainView {
+  display: grid;
+  grid-template-columns: auto 5fr 1fr;
+  grid-gap: 20px;
+}
 .content{
   padding: 1% 5%;
 }
