@@ -14,7 +14,7 @@
           <v-list-group
           v-bind:key="section.title">
             <template v-slot:activator>
-              <v-list-tile>{{ section.title }}</v-list-tile>
+              <v-list-tile>{{ section.title | myLocale }}</v-list-tile>
             </template>
             <v-list-tile
             v-for="item in section.items"
@@ -24,7 +24,7 @@
                 <font-awesome-icon size="1x" :icon="item.icon"></font-awesome-icon>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                <v-list-tile-title>{{ item.title | myLocale }}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list-group>
@@ -38,7 +38,7 @@
             <font-awesome-icon size="1x" :icon="section.icon"></font-awesome-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>{{ section.title }}</v-list-tile-title>
+            <v-list-tile-title>{{ section.title | myLocale }}</v-list-tile-title>
           </v-list-tile-content>
           </v-list-tile>
           </template>
