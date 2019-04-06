@@ -1,11 +1,7 @@
 <template>
   <v-navigation-drawer
   permanent
-  app
   >
-    <v-toolbar dark flat>
-    </v-toolbar>
-    <v-divider></v-divider>
     <v-list dense class="pt-0">
       <template
       v-for="section in sections">
@@ -66,6 +62,9 @@
                 { title: 'Service & Utilities', icon: 'bolt', url: '/utilities' }
              ]
            },
+           { title: 'Additional Terms', icon: 'list-ul', url:'/additional' },
+           { title: 'Signatures', icon: 'signature', url: '/signatures' },
+           { title: 'Appendix', icon: 'ellipsis-h', url: '/appendix' }
         ],
         right: null
       }
