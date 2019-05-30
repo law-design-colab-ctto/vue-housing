@@ -9,7 +9,7 @@ require('../static/styles.scss');
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-import { faExclamation, faHome, faMoneyBillAlt, faCalendarDay, faFlag, faClipboardList, faBuilding, faUserFriends, faBars} from '@fortawesome/free-solid-svg-icons'
+import { faExclamation, faHome, faMoneyBillAlt, faCalendarDay, faFlag, faClipboardList, faBuilding, faUserFriends, faBars, faMoneyBill, faMoneyCheckAlt, faKey, faBolt, faListUl, faSignature, faEllipsisH} from '@fortawesome/free-solid-svg-icons'
 library.add(faExclamation)
 library.add(faHome)
 library.add(faMoneyBillAlt)
@@ -19,6 +19,13 @@ library.add(faClipboardList)
 library.add(faBuilding)
 library.add(faUserFriends)
 library.add(faBars)
+library.add(faMoneyBill)
+library.add(faMoneyCheckAlt)
+library.add(faKey)
+library.add(faBolt)
+library.add(faListUl)
+library.add(faSignature)
+library.add(faEllipsisH)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

@@ -1,16 +1,18 @@
-<template>
+<template dark>
   <div>
     <img id="ontario-logo" src="@/assets/ontario-logo.png" />
     <div class="right">
       <v-text-field
         append-icon="mic"
         flat
+        dark
         label="Search"
         prepend-inner-icon="search"
         solo-inverted
       ></v-text-field>
       <span>Profile</span>
       <span>Settings</span>
+      <langSwitcher/>
     </div>
   </div>
     <!-- <v-toolbar app>
@@ -24,7 +26,12 @@
 
 
 <script>
+import langSwitcher from  '@/components/langSwitcher.vue';
+
   export default {
+    components: {
+    langSwitcher
+    },
     data () {
       return {
       }
@@ -37,6 +44,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: black;
+  color: white;
 }
 .right {
   width: 50%;

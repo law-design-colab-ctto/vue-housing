@@ -46,5 +46,8 @@
     "Yes": "Yes",
     "No": "No",
     "No Charge": "No Charge",
-    "Pay Per Use": "Pay Per Use"
+    "Pay Per Use": "Pay Per Use",
+    "Money": "Money",
+    "Term": "Term",
+    "Dates": "Dates"
 }

@@ -5,7 +5,7 @@
         <v-flex xs12 sm12 md12>
             <div class="centered">
                 <label>{{ $t("Number of") }} {{title | myLocale}}: </label> &nbsp;
-                <input class="counter" type="number" min="0" v-model="amount" placeholder="enter number here" @keyup="amountChanged">
+                <input class="counter" type="number" min="0" v-model="amount" placeholder="enter number here" @keyup="amountChanged" @click="amountChanged">
             </div>
         </v-flex>
       </v-layout>
@@ -35,8 +35,8 @@
 
 <style>
 .counter{
-  border: 1px solid #00bad1;
-  color: #00bad1;
+  border: 1px solid black !important;
+  color: black !important;
   text-align: center;
   border-radius: 10px;
   font-weight: 900;
